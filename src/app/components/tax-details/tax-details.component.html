@@ -1,0 +1,34 @@
+<div class="container">
+    <mat-form-field class="salary-input">
+      <input matInput placeholder="Gross Annual Salary" [(ngModel)]="incomingSalary" />
+      <button mat-button matSuffix (click)="calculateTaxes()">Calc</button>
+    </mat-form-field>
+  
+    <div class="result-container" *ngIf="isResultShown">
+      <div class="result-item">
+        <span>Gross Annual Salary:</span>
+        <span>{{ '£ ' + calculationResult.grossAnnualSalary }}</span>
+      </div>
+      <div class="result-item">
+        <span>Gross Monthly Salary:</span>
+        <span>{{ '£ ' + calculationResult.grossMonthlySalary }}</span>
+      </div>
+      <div class="result-item">
+        <span>Net Annual Salary:</span>
+        <span>{{ '£ ' + calculationResult.netAnnualSalary }}</span>
+      </div>
+      <div class="result-item">
+        <span>Net Monthly Salary:</span>
+        <span>{{ '£ ' + calculationResult.netMonthlySalary }}</span>
+      </div>
+      <div class="result-item">
+        <span>Annual Tax Paid:</span>
+        <span>{{ '£ ' + calculationResult.annualTax }}</span>
+      </div>
+      <div class="result-item">
+        <span>Monthly Tax Paid:</span>
+        <span>{{ '£ ' + calculationResult.monthlyTax }}</span>
+      </div>
+    </div>
+  </div>
+  
